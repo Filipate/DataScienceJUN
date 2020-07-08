@@ -19,6 +19,7 @@ def clean_strings(strings):
 
     """
     otra forma es hacer una lista de operanciones que se necesita para un particular conjunto de datos
+    (ver python for data analyses 2nd edition)
     """
 
     def remove_punctuation(value):
@@ -33,3 +34,15 @@ def clean_strings(strings, ops):
             value = function(value)
         result.append(value)
     return result
+
+    """
+    you wanted to sort a collection of strings by the number of distinct letters in each string:
+    """
+    strings = ['foo', 'card', 'bar', 'aaaa', 'abab']
+
+    #Here we could pass a lambda function to the list’s sort method:
+
+    strings.sort(key=lambda x: len(set(list(x))))
+
+    strings
+    ['aaaa', 'foo', 'abab', 'bar', 'card']
